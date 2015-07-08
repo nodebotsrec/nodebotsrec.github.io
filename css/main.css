@@ -11,7 +11,7 @@ a { text-decoration: none; color:rgb(180,30,30);}
   margin: 0 0 200px;
   text-align: center;
   height: 250px;
-  background: #222 url("/img/nodebots-day-pan-lg.jpg") center top no-repeat;
+  background: #222 url("/img/recife-2.jpg") center center no-repeat;
   background-size: 100% auto;
   background-size: cover;
 }
@@ -52,8 +52,8 @@ a { text-decoration: none; color:rgb(180,30,30);}
   }
 }
 
-.notice h1{
-  font-size:16px;
+.notice h2{
+  font-size:14px;
   line-height: 1.2em;
   text-align: left;
   width:150px;
