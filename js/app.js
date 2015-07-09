@@ -3,13 +3,17 @@ var map;
 var meetups = [];
 
 // functions
-var listEvents = function (name, lat, lng, url, venue, address) {
-  meetups.push({coords:[lat, lng], name: name, url: url, venue: venue, address: address});
+var listEvents = function (name, lat, lng, url, venue, time) {
+  meetups.push({coords:[lat, lng], name: name, url: url, venue: venue, time: time});
 };
 
 var showEvents = function () {
   $.each(meetups, function (index, data) {
-    $('.events-list').append('<li><strong><a href="' + data.url + '" target="_blank" title="Ver detalhes">' + data.name + '</a></strong> - <i>' + data.venue + '</i></li>');
+    var time = new Date(data.time);
+    var monthname = ['Janeiro','Fevereiro','Março','Abril','Maio','Junho','Julho','Agosto','Setembro','Outubro','Novembro','Dezembro'];
+    time = time.getDate() + ', ' + monthname[time.getMonth()] + ' de ' + time.getFullYear();
+
+    $('.events-list').append('<li><strong><a href="' + data.url + '" target="_blank" title="Ver detalhes">' + data.name + '</a></strong><br>' + time + ' <br><i>' + data.venue + '</i></li>');
   });
 
   meetups.map(function (m) {
@@ -42,7 +46,7 @@ $(document).ready(function () {
 
   $.getJSON('http://api.meetup.com/2/events?group_urlname=nodebotsrec&key=6d265922775d4c10602c3053324f9&sign=true&callback=?',function(data){
     $.each(data.results, function ( index, data ) {
-      listEvents(data.name, data.venue.lat, data.venue.lon, data.event_url, data.venue.name, data.venue.address_1);
+      listEvents(data.name, data.venue.lat, data.venue.lon, data.event_url, data.venue.name, data.time);
     });
     showEvents();
   });
