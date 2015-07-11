@@ -184,7 +184,8 @@ footer{
   opacity: 1;
   width:250px; /* all the nested css is done as percentages of this, so you can scale it to your <3's content */
   height:250px;
-  background-color: #F8E01E;
+  background: #F8E01E url(../img/bg-logo-rec-bot.png) no-repeat center center;
+	background-size: cover;
   position:relative;
   top:40px;
 }
@@ -203,6 +204,7 @@ footer{
   height:12%;
   border-radius: 100%;
   margin:5% auto -3.8%;
+	opacity: 0;
 }
 .nodebot .antenna{
   width:6%;
@@ -210,6 +212,7 @@ footer{
   height:16.5%;
   border-bottom-left-radius: 80% 30%;
   border-bottom-right-radius: 80% 30%;
+	opacity: 0;
 }
 .nodebot .head{
   width: 100%;
@@ -246,6 +249,7 @@ footer{
   width: 69%;
   height: 6%;
   margin: 3.6% auto 0;
+	opacity: 0;
 }
 .nodebot .neck:last-child{
   width: 48%;
